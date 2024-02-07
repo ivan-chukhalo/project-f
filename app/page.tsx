@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import {nanoid} from "nanoid";
 
 function Task({taskDescription}:{taskDescription: string}) {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <section className="flex justify-center flex-wrap flex-col items-center gap-10">
         <header className="text-center uppercase text-2xl">Your list of tasks</header>
         <ul className="w-1/2 flex flex-col gap-4">
-          {tasks.map(task => <Task taskDescription={task} key={task} />)}
+          {tasks.map(task => <Task taskDescription={task} key={nanoid()} />)}
         </ul>
       </section>
     </main>
