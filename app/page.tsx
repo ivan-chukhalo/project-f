@@ -3,10 +3,11 @@ import { useState } from "react";
 import {nanoid} from "nanoid";
 
 function Task({taskDescription, isActive}: {taskDescription: string, isActive: boolean }) {
+  const inputId = nanoid();
   return (
     <li className="flex gap-4 text-lg">
-      <input type="checkbox" id="statusCheckBox" />
-      <label htmlFor="statusCheckBox">{taskDescription}</label>
+      <input type="checkbox" id={inputId} />
+      <label htmlFor={inputId}>{taskDescription}</label>
     </li>
   );
 }
